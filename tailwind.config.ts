@@ -8,9 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        global: "#25292e"
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.5s ease-in-out',
       },
     },
   },
