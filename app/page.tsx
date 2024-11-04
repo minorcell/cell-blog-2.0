@@ -526,6 +526,7 @@ function HomePage() {
             <div
               className="duration-500 w-8 h-8 m-2 md:m-1 flex items-center justify-center
                 hover:cursor-pointer border-b border-gray-600 rounded-xl hover:bg-gray-600"
+              key={i}
             >
               {item.icon}
             </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 
 const useTyping = (
@@ -5,7 +7,7 @@ const useTyping = (
   typingSpeed: number = 100,
   resetDelay: number = 1000
 ): string => {
-  const [typedText, setTypedText] = useState<string>("_");
+  const [typedText, setTypedText] = useState<string>(text);
   const [index, setIndex] = useState<number>(0);
   const [isTyping, setIsTyping] = useState<boolean>(true);
 

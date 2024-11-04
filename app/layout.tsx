@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   },
   description: "mCell's blog",
   keywords: ["mCell", "blog"],
+  icons: {
+    icon: "/cell.jpg",
+  },
 };
 
 export default function RootLayout({
@@ -18,18 +21,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  /* return (
-      <html lang="en">
-        <body className="w-screen h-screen text-black bg-gray-50 font-mono antialiased flex items-center ">
-          <div className="w-[87.5%] h-screen flex items-center justify-center px-8">
-            {children}
-          </div>
-        </body>
-      </html>
-    ); */
   return (
     <html lang="en">
-      <body className="w-screen h-screen text-white bg-global font-mono antialiased flex items-center ">
+      <body className="w-screen h-screen text-white bg-global font-mono antialiased flex items-center">
         <div className="h-[87.5%] w-1/6">
           <Navbar />
         </div>

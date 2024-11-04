@@ -72,7 +72,7 @@ export default function Links() {
       <ul className="w-full h-full flex flex-col items-center justify-evenly px-8">
         {barData.map((item, index) => (
           <li
-            key={index}
+            key={item.href + index}
             className={`w-2/3 h-1/6 flex items-center justify-center rounded-xl text-xl overflow-hidden ${
               pathname === item.href ? "border" : ""
             }`}
