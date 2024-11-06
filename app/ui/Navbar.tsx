@@ -4,7 +4,7 @@ import Avatar from "./global/Avatar";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-full  flex flex-col items-center justify-evenly">
+    <div className="w-full h-full flex flex-col items-center justify-evenly">
       <Avatar />
       <NavTyping />
       <Links />
