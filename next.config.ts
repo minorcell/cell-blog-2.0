@@ -7,9 +7,9 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: false,
   compiler: {
     styledComponents: true,
-    removeConsole: {
-      exclude: ['error'],
-    },
+    /*     removeConsole: {
+          exclude: ['error'],
+        }, */
   },
 };
 

@@ -4,7 +4,7 @@ import { BlogType } from "@/app/lib/type/type";
 
 export default function BlogItem({ blog }: Readonly<{ blog: BlogType }>) {
   return (
-    <div className="cursor-pointer overflow-hidden will-change-auto duration-500 flex flex-col w-[24%] h-96 items-center justify-between border rounded-xl mb-8 hover:rounded-none hover:shadow-2xl">
+    <div className="cursor-pointer overflow-hidden will-change-auto duration-500 flex flex-col w-[48%] h-96 items-center justify-between border rounded-xl mb-8 hover:shadow-2xl">
       <div className="h-3/5 w-full bg-white relative border-b">
         <Image
           src={`http:8.137.124.251:4399${blog.cover}`}
@@ -14,32 +14,29 @@ export default function BlogItem({ blog }: Readonly<{ blog: BlogType }>) {
         />
       </div>
       <div className="h-2/5 w-full flex flex-col items-center justify-between px-4">
-        <div className="h-1/3 flex justify-start items-center text-2xl font-bold text-center w-full overflow-hidden text-ellipsis whitespace-nowrap">
-          {blog.title.length > 15
-            ? blog.title.substring(0, 15) + ".."
+        <div className="h-1/3 flex justify-start items-center text-xl font-bold text-center w-full overflow-hidden text-ellipsis whitespace-nowrap  gradient-text">
+          {blog.title.length > 20
+            ? blog.title.substring(0, 20) + ".."
             : blog.title}
         </div>
-        <div className="text-gray-300  h-2/3 flex flex-col items-center justify-evenly text-base w-full">
-          <p className="w-full h-14 text-xl overflow-hidden text-ellipsis whitespace-wrap line-clamp-2">
+        <div className="text-gray-500  h-2/3 flex flex-col items-center justify-evenly text-base w-full">
+          <p className="w-full h-12 text-base overflow-hidden text-ellipsis whitespace-wrap line-clamp-2">
             {blog.description}
           </p>
           <div className="w-full flex-1 flex items-center justify-between">
             {/*  类型  */}
-            <div className="w-[35%] flex items-center bg-white rounded-full pl-2 text-black overflow-x-auto">
+            <div className="w-[35%] flex items-center bg-blue-100 rounded-xl pl-2 py-1 text-global overflow-x-auto">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
+                width="1.3em"
+                height="1.3em"
                 viewBox="0 0 24 24"
-                className="mr-1"
+                className="mr-4 text-global"
               >
-                <g fill="none" fillRule="evenodd">
-                  <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
-                  <path
-                    fill="currentColor"
-                    d="M10.537 2.164a3 3 0 0 1 2.244.727l.15.14l7.822 7.823a3 3 0 0 1 .135 4.098l-.135.144l-5.657 5.657a3 3 0 0 1-4.098.135l-.144-.135L3.03 12.93a3 3 0 0 1-.878-2.188l.011-.205l.472-5.185a3 3 0 0 1 2.537-2.695l.179-.021zM8.024 8.025a2 2 0 1 0 2.829 2.829a2 2 0 0 0-2.829-2.829"
-                  />
-                </g>
+                <path
+                  fill="currentColor"
+                  d="m21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4a2 2 0 0 0-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42M5.5 7A1.5 1.5 0 0 1 4 5.5A1.5 1.5 0 0 1 5.5 4A1.5 1.5 0 0 1 7 5.5A1.5 1.5 0 0 1 5.5 7m11.77 8.27L13 19.54l-4.27-4.27A2.52 2.52 0 0 1 8 13.5a2.5 2.5 0 0 1 2.5-2.5c.69 0 1.32.28 1.77.74l.73.72l.73-.73c.45-.45 1.08-.73 1.77-.73a2.5 2.5 0 0 1 2.5 2.5c0 .69-.28 1.32-.73 1.77"
+                />
               </svg>
               {blog.type}
             </div>
@@ -47,15 +44,21 @@ export default function BlogItem({ blog }: Readonly<{ blog: BlogType }>) {
             <div className="w-[30%] flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
+                width="1.5em"
+                height="1.5em"
                 viewBox="0 0 24 24"
-                className="mr-2"
+                className="mr-4 text-global"
               >
-                <path
-                  fill="currentColor"
-                  d="M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0 8a5 5 0 0 1-5-5a5 5 0 0 1 5-5a5 5 0 0 1 5 5a5 5 0 0 1-5 5m0-12.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5"
-                />
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                >
+                  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0" />
+                  <path d="M11.669 17.994Q6.489 17.814 3 12q3.6-6 9-6t9 6m-2 10.5a4.75 4.75 0 0 1 3.5-3.5a4.75 4.75 0 0 1-3.5-3.5a4.75 4.75 0 0 1-3.5 3.5a4.75 4.75 0 0 1 3.5 3.5" />
+                </g>
               </svg>
               {blog.view}
             </div>
@@ -63,17 +66,20 @@ export default function BlogItem({ blog }: Readonly<{ blog: BlogType }>) {
             <div className="w-[30%] flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
+                width="1.3em"
+                height="1.3em"
                 viewBox="0 0 24 24"
-                className="mr-2"
+                className="mr-4 text-global"
               >
-                <g fill="none">
-                  <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
-                  <path
-                    fill="currentColor"
-                    d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 4a1 1 0 0 0-1 1v5a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V7a1 1 0 0 0-1-1"
-                  />
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                >
+                  <path d="M20.982 11.436a9 9 0 1 0-9.966 9.51" />
+                  <path d="m17.8 20.817l-2.172 1.138a.392.392 0 0 1-.568-.41l.415-2.411l-1.757-1.707a.389.389 0 0 1 .217-.665l2.428-.352l1.086-2.193a.392.392 0 0 1 .702 0l1.086 2.193l2.428.352a.39.39 0 0 1 .217.665l-1.757 1.707l.414 2.41a.39.39 0 0 1-.567.411zM12 7v5l1 1" />
                 </g>
               </svg>
               {formatTimestamp(blog.create_date)}

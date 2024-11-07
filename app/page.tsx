@@ -1,5 +1,5 @@
-import { useMemo } from "react";
-
+import TypingContext from "@/app/ui/global/TypingContext";
+import NumberText from "@/app/ui/global/NumberTicker";
 const tecs = [
   {
     name: "Git",
@@ -518,14 +518,15 @@ const tecs = [
 ];
 
 function HomePage() {
-  const tecContent = useMemo(() => {
-    return (
+  return (
+    <div className="w-full h-full flex flex-col items-center justify-evenly animate-fadeIn">
+      <TypingContext />
       <div className="flex flex-col items-center justify-center">
         <div className="flex flex-wrap items-center justify-evenly ">
           {tecs.map((item, i) => (
             <div
-              className="duration-500 w-8 h-8 m-2 md:m-1 flex items-center justify-center
-                hover:cursor-pointer border-b border-gray-600 rounded-xl hover:bg-gray-600"
+              className="duration-500 w-8 h-8 m-2 md:mx-3 flex items-center justify-center
+                hover:cursor-pointer border-b border-global rounded-xl hover:bg-global"
               key={i}
             >
               {item.icon}
@@ -533,16 +534,9 @@ function HomePage() {
           ))}
         </div>
       </div>
-    );
-  }, [tecs]);
-
-  return (
-    <div className="w-full h-full flex flex-col items-center justify-evenly animate-fadeIn">
-      <span className="block text-2xl"> mCell，大前端技术爱好者。</span>
-      {tecContent}
-      <div className="w-full text-xl text-center">
-        小站使用Next、Tailwind 编写
-      </div>
+      <footer className="w-full text-xl text-center">
+        <NumberText />
+      </footer>
     </div>
   );
 }

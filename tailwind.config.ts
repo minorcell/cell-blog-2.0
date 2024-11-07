@@ -15,11 +15,14 @@ const config: Config = {
         },
       },
       colors: {
-        global: "#25292e"
+        global: "#616cff"
       },
       animation: {
         fadeIn: 'fadeIn 0.5s ease-in-out',
       },
+      backgroundImage: {
+        'gradient-text': 'linear-gradient(44.68786392067387deg, #616CFF 0%, #68A4FF 100%)',
+      }
     },
   },
   plugins: [],

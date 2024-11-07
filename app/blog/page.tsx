@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getBlogList } from "@/app/lib/data/blog";
 import { BlogType } from "@/app/lib/type/type";
 import BlogItem from "@/app/ui/blog/BlogItem";
+import { ReactLenis } from "lenis/react";
 
 export default function Blog() {
   const [blogList, setBlogList] = useState<BlogType[]>([]);
@@ -17,10 +18,12 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="flex animate-fadeIn flex-wrap items-center justify-between w-full h-full overflow-y-auto pr-8">
-      {blogList.map((item: BlogType, index: number) => (
-        <BlogItem key={index} blog={item} />
-      ))}
-    </div>
+    <ReactLenis root options={{ autoRaf: true }}>
+      <div className="flex flex-wrap items-center justify-between w-full">
+        {blogList.map((item: BlogType, index: number) => (
+          <BlogItem key={index} blog={item} />
+        ))}
+      </div>
+    </ReactLenis>
   );
 }

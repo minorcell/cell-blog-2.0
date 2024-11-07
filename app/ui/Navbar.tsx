@@ -1,13 +1,13 @@
 import Links from "@/app/ui/global/Links";
-import NavTyping from "@/app/ui/global/NavTyping";
-import Avatar from "./global/Avatar";
+import SearchInput from "@/app/ui/global/SearchInput";
+import Avatar from "@/app/ui/global/Avatar";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-evenly">
-      <Avatar />
-      <NavTyping />
+    <div className="w-4/5 h-full flex items-center justify-center">
       <Links />
+      <SearchInput />
+      <Avatar />
     </div>
   );
 };
