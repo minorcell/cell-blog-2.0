@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Sparkle } from "lucide-react";
 
 const barData = [
   {
@@ -45,18 +46,7 @@ export default function Links() {
                 }`}
               >
                 {item.title}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.5em"
-                  height="1.5em"
-                  viewBox="0 0 24 24"
-                  className="absolute -top-1 -right-3"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M10.74 10.75L12 8l1.25 2.75L16 12l-2.75 1.26L12 16l-1.26-2.74L8 12z"
-                  />
-                </svg>
+                <Sparkle className="absolute top-0 -right-1 h-3 w-3" />
               </Link>
             </li>
           );

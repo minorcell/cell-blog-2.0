@@ -4,7 +4,7 @@ export default function SearchInput() {
       <input
         type="text"
         className="w-5/6 h-8 border border-gray-300 rounded-l-xl pl-2 focus:outline-none focus:border-global placeholder-gray-500 bg-transparent"
-        placeholder="搜索mCell"
+        placeholder="在工作台内搜索"
       />
       <button className="w-1/6 h-8 bg-global text-white rounded-r-xl flex items-center justify-center">
         <svg
