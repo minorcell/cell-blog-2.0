@@ -7,7 +7,7 @@ export default function BlogItem({ blog }: Readonly<{ blog: BlogType }>) {
     <div className="cursor-pointer overflow-hidden will-change-auto duration-500 flex flex-col w-[48%] h-96 items-center justify-between border rounded-xl mb-8 hover:shadow-2xl">
       <div className="h-3/5 w-full bg-white relative border-b">
         <Image
-          src={`http:8.137.124.251:4399${blog.cover}`}
+          src={blog.cover}
           alt={blog.title}
           layout="fill"
           objectFit="cover"
@@ -21,7 +21,7 @@ export default function BlogItem({ blog }: Readonly<{ blog: BlogType }>) {
         </div>
         <div className="text-gray-500  h-2/3 flex flex-col items-center justify-evenly text-base w-full">
           <p className="w-full h-12 text-base overflow-hidden text-ellipsis whitespace-wrap line-clamp-2">
-            {blog.description}
+            {blog.intro}
           </p>
           <div className="w-full flex-1 flex items-center justify-between">
             {/*  类型  */}
@@ -60,7 +60,7 @@ export default function BlogItem({ blog }: Readonly<{ blog: BlogType }>) {
                   <path d="M11.669 17.994Q6.489 17.814 3 12q3.6-6 9-6t9 6m-2 10.5a4.75 4.75 0 0 1 3.5-3.5a4.75 4.75 0 0 1-3.5-3.5a4.75 4.75 0 0 1-3.5 3.5a4.75 4.75 0 0 1 3.5 3.5" />
                 </g>
               </svg>
-              {blog.view}
+              {blog.looks}
             </div>
             {/*  发布时间 */}
             <div className="w-[30%] flex items-center">
@@ -82,7 +82,7 @@ export default function BlogItem({ blog }: Readonly<{ blog: BlogType }>) {
                   <path d="m17.8 20.817l-2.172 1.138a.392.392 0 0 1-.568-.41l.415-2.411l-1.757-1.707a.389.389 0 0 1 .217-.665l2.428-.352l1.086-2.193a.392.392 0 0 1 .702 0l1.086 2.193l2.428.352a.39.39 0 0 1 .217.665l-1.757 1.707l.414 2.41a.39.39 0 0 1-.567.411zM12 7v5l1 1" />
                 </g>
               </svg>
-              {formatTimestamp(blog.create_date)}
+              {formatTimestamp(blog.update_time)}
             </div>
           </div>
         </div>

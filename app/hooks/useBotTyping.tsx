@@ -2,11 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const useTyping = (
-  text: string,
-  typingSpeed: number = 100,
-  resetDelay: number = 1000
-): string => {
+const useTyping = (text: string, typingSpeed: number = 100): string => {
   const [typedText, setTypedText] = useState<string>("");
   const [index, setIndex] = useState<number>(0);
   const [isTyping, setIsTyping] = useState<boolean>(true);
@@ -31,16 +27,12 @@ const useTyping = (
 
     if (index >= text.length) {
       setIsTyping(false);
-      timer = setTimeout(() => {
-        setIndex(0);
-        setIsTyping(true);
-      }, resetDelay);
     }
 
-    setTypedText(text.slice(0, index) + "_");
+    setTypedText(text.slice(0, index));
 
     return () => clearTimeout(timer);
-  }, [index, isTyping, text, typingSpeed, resetDelay]);
+  }, [index, isTyping, text, typingSpeed]);
 
   return typedText;
 };

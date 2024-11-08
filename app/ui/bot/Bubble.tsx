@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Bot } from "lucide-react";
+import useBotTyping from "@/app/hooks/useBotTyping";
 
 interface BubbleProps {
   message: string;
@@ -10,24 +10,24 @@ interface BubbleProps {
 
 const Bubble: React.FC<BubbleProps> = ({ message, sender }) => {
   const isUser = sender === "user";
+  const botTypingMessage = useBotTyping(message, 10);
 
   return (
     <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}>
       <div className="flex items-start relative">
         {!isUser && (
-          <Bot className=" text-global border rounded-full p-2 w-10 h-10" />
+          <span className="border rounded-full w-10 h-10 text-xl flex items-center justify-center">
+            🤖
+          </span>
         )}
         <div className="px-4 max-w-4xl">
           <p
-            className={`px-4 py-2 rounded-xl ${
+            className={`px-4 py-2 rounded-xl leading-6 tracking-widest font-sans ${
               isUser ? "bg-blue-100" : "bg-gray-200"
             }`}
           >
-            {message}
+            {isUser ? message : botTypingMessage}
           </p>
-          {/* {!isUser && (
-            <Copy className="text-global p-1 mt-1 absolute right-4 cursor-pointer" />
-          )} */}
         </div>
       </div>
     </div>

@@ -2,9 +2,17 @@ export type BlogType = {
   title: string;
   id: number;
   type: string;
-  view: number;
+  looks: number;
   cover: string;
-  description: string;
-  create_date: Date;
-  update_date: Date;
+  intro: string;
+  update_time: Date;
+};
+
+export type BotChatType = {
+  content: string;
+};
+
+export type MessageType = {
+  sender: "user" | "bot";
+  message: string;
 };

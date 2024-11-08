@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { getBlogList } from "@/app/lib/data/blog";
 import { BlogType } from "@/app/lib/type/type";
@@ -19,7 +20,7 @@ export default function Blog() {
 
   return (
     <ReactLenis root options={{ autoRaf: true }}>
-      <div className="flex flex-wrap items-center justify-between w-full">
+      <div className="flex flex-wrap items-start justify-between w-full">
         {blogList.map((item: BlogType, index: number) => (
           <BlogItem key={index} blog={item} />
         ))}
