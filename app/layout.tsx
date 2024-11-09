@@ -4,11 +4,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "mCell's dev",
-    template: "%s | mCell's dev",
+    default: "mCell's WorkSpace",
+    template: "%s | mCell's WorkSpace",
   },
-  description: "mCell's dev - 邓军辉的工作台",
-  keywords: ["mCell", "dev", "mCell's dev", "邓军辉的工作台"],
+  description: "mCell's WorkSpace - 邓军辉的工作台",
+  keywords: ["mCell", "WorkSpace", "mCell's WorkSpace", "邓军辉的工作台"],
   icons: {
     icon: "/cell.jpg",
   },

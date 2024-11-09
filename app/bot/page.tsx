@@ -6,7 +6,6 @@ import MessageBox from "@/app/ui/bot/MessageBox";
 import { chatBotServer } from "@/app/lib/data/bot";
 import { MessageType } from "@/app/lib/type/type";
 import { getMessages, addMessage, clearMessages } from "@/app/lib/indexdDB";
-import { ReactLenis } from "lenis/react";
 
 export default function BotPage() {
   const [messages, setMessages] = useState<MessageType[]>([]);

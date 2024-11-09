@@ -42,7 +42,9 @@ export default function Links() {
               <Link
                 href={item.href}
                 className={`relative px-2 duration-500 hover:text-global hover:border-opacity-100 h-2/3 flex items-center justify-center border-b-2 border-global border-opacity-0 ${
-                  pathname === item.href ? "border-opacity-100 text-global" : ""
+                  pathname === item.href
+                    ? "border-opacity-100 text-global"
+                    : "text-gray-600"
                 }`}
               >
                 {item.title}
@@ -59,7 +61,9 @@ export default function Links() {
               <Link
                 href={item.href}
                 className={`px-2 duration-500 hover:text-global hover:border-opacity-100 h-2/3 flex items-center justify-center border-b-2 border-global border-opacity-0 ${
-                  pathname === item.href ? "border-opacity-100 text-global" : ""
+                  pathname === item.href
+                    ? "border-opacity-100 text-global"
+                    : "text-gray-600"
                 }`}
               >
                 {item.title}
