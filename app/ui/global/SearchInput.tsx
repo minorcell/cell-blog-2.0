@@ -7,7 +7,7 @@ export default function SearchInput() {
          bg-transparent"
         placeholder="在工作台内搜索"
       />
-      <button className="w-1/6 h-8 bg-global text-white rounded-r-xl flex items-center justify-center">
+      <div className="w-1/6 h-8 bg-global text-white rounded-r-xl flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -22,7 +22,7 @@ export default function SearchInput() {
             />
           </g>
         </svg>
-      </button>
+      </div>
     </div>
   );
 }
