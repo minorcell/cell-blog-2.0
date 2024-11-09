@@ -1,3 +1,5 @@
+"use client";
+
 export default function SearchInput() {
   return (
     <div className="w-1/5 h-full flex items-center justify-center">

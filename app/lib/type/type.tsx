@@ -16,3 +16,8 @@ export type MessageType = {
   sender: "user" | "bot";
   message: string;
 };
+
+export type UserLogin = {
+  name: string;
+  password: string;
+};

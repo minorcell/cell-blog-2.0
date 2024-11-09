@@ -7,7 +7,7 @@ interface ChatProps {
 
 const Chat: React.FC<ChatProps> = ({ messages }) => {
   return (
-    <div className="select-text w-full px-6 bg-gray-50 rounded-xl py-24">
+    <div className="select-text w-full px-6 rounded-b-xl py-24 bg-slate-100">
       {messages.map((msg: MessageType, index: number) => (
         <Bubble key={index} sender={msg.sender} message={msg.message} />
       ))}

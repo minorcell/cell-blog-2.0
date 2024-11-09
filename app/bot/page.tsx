@@ -2,10 +2,14 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Send, Trash2, LoaderCircle } from "lucide-react";
+import useStore from "@/app/store/useStore";
+
 import MessageBox from "@/app/ui/bot/MessageBox";
 import SpeechRecognitionComponent from "../ui/bot/Speech";
+
 import { chatBotServer } from "@/app/lib/data/bot";
 import { MessageType } from "@/app/lib/type/type";
+
 import { getMessages, addMessage, clearMessages } from "@/app/lib/indexdDB";
 
 export default function BotPage() {
@@ -89,7 +93,7 @@ export default function BotPage() {
 
   return (
     <div className="w-full h-full flex items-center justify-center relative">
-      <div className="mx-auto w-3/5 absolute bottom-4 z-40 rounded-xl">
+      <div className="mx-auto w-3/5 absolute bottom-4 z-20 rounded-xl">
         <div className="fixed w-1/2 h-14 left-1/2 bg-gray-50 -translate-x-1/2 bottom-4 flex items-center rounded-xl border shadow-xl">
           <button
             onClick={async () => {

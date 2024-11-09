@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: "mCell's WorkSpace - 邓军辉的工作台",
   keywords: ["mCell", "WorkSpace", "mCell's WorkSpace", "邓军辉的工作台"],
   icons: {
-    icon: "/cell.jpg",
+    icon: "/icon.svg",
   },
 };
 
@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="select-none w-screen h-screen text-black bg-gray-50 font-sans antialiased flex items-center pt-24">
-        <div className="h-16 w-full fixed top-0 z-40 backdrop-blur flex justify-center border-b">
+        <header className="h-16 w-full fixed top-0 z-40 backdrop-blur flex justify-center border-b">
           <Navbar />
-        </div>
+        </header>
         {children}
       </body>
     </html>

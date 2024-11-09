@@ -1,15 +1,46 @@
-import Links from "@/app/ui/global/Links";
-import SearchInput from "@/app/ui/global/SearchInput";
+"use client";
+
+import { useState } from "react";
 import { Fingerprint } from "lucide-react";
+import useStore from "@/app/store/useStore";
+
+import Links from "@/app/ui/global/Links";
+import Modal from "@/app/ui/cellComponents/Modal";
+import SearchInput from "@/app/ui/global/SearchInput";
+import LoginRegisterForm from "@/app/ui/global/LoginRegisterForm";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const globalIsLogin = useStore((state) => state.globalIsLogin);
+  const clearUser = useStore((state) => state.clearUser);
+
+  const onOpen = () => {
+    if (!globalIsLogin) {
+      setIsOpen(true);
+    } else {
+      clearUser();
+    }
+  };
+  const onClose = () => setIsOpen(false);
+
   return (
     <div className="w-4/5 h-full flex items-center justify-center">
       <Links />
       <SearchInput />
-      <div className="duration-500 ml-12 border w-9 h-9 p-1 flex items-center justify-center rounded-xl text-global cursor-pointer hover:bg-global hover:text-white">
-        <Fingerprint className="animate-pulse" />
+      <div
+        onClick={onOpen}
+        className="ml-12 border w-9 h-9 p-1 flex items-center justify-center rounded-xl cursor-pointer"
+      >
+        <Fingerprint
+          className={`duration-1000 ${
+            globalIsLogin ? "text-green-500" : "text-red-500"
+          }`}
+        />
       </div>
+      <Modal isOpen={isOpen} onClose={onClose} showBottomButtons={false}>
+        <LoginRegisterForm setIsOpen={setIsOpen} />
+      </Modal>
     </div>
   );
 };

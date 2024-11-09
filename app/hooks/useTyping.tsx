@@ -37,7 +37,7 @@ const useTyping = (
       }, resetDelay);
     }
 
-    setTypedText(text.slice(0, index) + "_");
+    setTypedText(text.slice(0, index) + "");
 
     return () => clearTimeout(timer);
   }, [index, isTyping, text, typingSpeed, resetDelay]);
