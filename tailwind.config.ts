@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 
+// import Form from "@tailwindcss/forms";
+import Typography from "@tailwindcss/typography";
+
 const config: Config = {
 	darkMode: ["class"],
 	content: [
@@ -35,6 +38,6 @@ const config: Config = {
 			}
 		}
 	},
-	plugins: [],
+	plugins: [Typography],
 };
 export default config;

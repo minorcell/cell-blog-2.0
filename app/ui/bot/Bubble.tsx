@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
-import useBotTyping from "@/app/hooks/useBotTyping";
+import ReactMarkdown from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/atom-one-dark.css";
 
 interface BubbleProps {
   message: string;
@@ -10,10 +12,13 @@ interface BubbleProps {
 
 const Bubble: React.FC<BubbleProps> = ({ message, sender }) => {
   const isUser = sender === "user";
-  const botTypingMessage = useBotTyping(message, 10);
 
   return (
-    <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}>
+    <div
+      className={`animate-fadeIn flex ${
+        isUser ? "justify-end" : "justify-start"
+      } mb-6`}
+    >
       <div className="flex items-start relative">
         {!isUser && (
           <span className="border rounded-full w-10 h-10 text-xl flex items-center justify-center">
@@ -21,14 +26,24 @@ const Bubble: React.FC<BubbleProps> = ({ message, sender }) => {
           </span>
         )}
         <div className="px-4 max-w-4xl">
-          <p
-            className={`px-4 py-2 rounded-xl leading-6 tracking-widest font-sans ${
-              isUser ? "bg-blue-100" : "bg-gray-200"
+          <div
+            className={`px-3 py-2 rounded-xl font-sans ${
+              isUser ? "bg-gray-200" : " bg-blue-100"
             }`}
           >
-            {isUser ? message : botTypingMessage}
-          </p>
+            <ReactMarkdown
+              rehypePlugins={[rehypeHighlight]}
+              className="prose prose-zinc"
+            >
+              {message}
+            </ReactMarkdown>
+          </div>
         </div>
+        {isUser && (
+          <span className="border rounded-full w-10 h-10 text-xl flex items-center j`ustify-center">
+            🤺
+          </span>
+        )}
       </div>
     </div>
   );
