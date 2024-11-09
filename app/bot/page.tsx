@@ -6,6 +6,7 @@ import MessageBox from "@/app/ui/bot/MessageBox";
 import { chatBotServer } from "@/app/lib/data/bot";
 import { MessageType } from "@/app/lib/type/type";
 import { getMessages, addMessage, clearMessages } from "@/app/lib/indexdDB";
+import { ReactLenis } from "lenis/react";
 
 export default function BotPage() {
   const [messages, setMessages] = useState<MessageType[]>([]);
@@ -67,8 +68,8 @@ export default function BotPage() {
 
   return (
     <div className="w-full h-full flex items-center justify-center relative">
-      <div className="mx-auto w-3/5 absolute bottom-2 bg-gray-50 z-40 rounded-xl">
-        <div className="relative flex items-center rounded-xl border">
+      <div className="mx-auto w-3/5 absolute bottom-4 z-40 rounded-xl">
+        <div className="fixed w-2/5 left-1/2 bg-gray-50 -translate-x-1/2 bottom-4 flex items-center rounded-xl border shadow-xl">
           <Trash
             onClick={async () => {
               if (!isLoading) {
@@ -92,7 +93,9 @@ export default function BotPage() {
             value={content}
             onChange={(e) => setContent(e.target.value)}
             type="text"
-            placeholder="输入消息和 BotCell 对话吧~"
+            placeholder={
+              isLoading ? "CellBot正在思考中..." : "输入消息和 BotCell 对话吧~"
+            }
             className="w-full ml-4 mr-12 py-2.5 bg-gray-50 focus:outline-none"
           />
           <div className="absolute right-2 flex items-center gap-1">

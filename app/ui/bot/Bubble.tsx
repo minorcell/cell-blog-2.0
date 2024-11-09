@@ -40,8 +40,8 @@ const Bubble: React.FC<BubbleProps> = ({ message, sender }) => {
           </div>
         </div>
         {isUser && (
-          <span className="border rounded-full w-10 h-10 text-xl flex items-center j`ustify-center">
-            🤺
+          <span className="border rounded-full w-10 h-10 text-xl flex items-center justify-center">
+            😎
           </span>
         )}
       </div>
