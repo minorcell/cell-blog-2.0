@@ -28,7 +28,7 @@ const Bubble: React.FC<BubbleProps> = ({ message, sender }) => {
         <div className="px-4 max-w-4xl">
           <div
             className={`px-3 py-2 rounded-xl font-sans shadow-md ${
-              isUser ? "bg-gray-300" : " bg-blue-100"
+              isUser ? "bg-slate-300" : " bg-blue-100"
             }`}
           >
             <ReactMarkdown
@@ -41,7 +41,7 @@ const Bubble: React.FC<BubbleProps> = ({ message, sender }) => {
         </div>
         {isUser && (
           <span className="border rounded-full w-10 h-10 text-xl flex items-center justify-center select-none bg-global">
-            😎
+            👻
           </span>
         )}
       </div>

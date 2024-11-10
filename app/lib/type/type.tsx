@@ -8,6 +8,10 @@ export type BlogType = {
   update_time: Date;
 };
 
+export type BlogDataProps = {
+  total: number;
+};
+
 export type BotChatType = {
   content: string;
 };

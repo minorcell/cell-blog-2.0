@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const useNumberTicker = (
-  startNumber: number = 0,
+  startNumber: number,
   endNumber: number,
   duration: number = 2000
 ) => {

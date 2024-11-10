@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="select-none w-screen h-screen text-black bg-gray-50 font-sans antialiased flex items-center pt-24">
+      <body className="select-none w-[100%] h-[100%] text-black bg-gray-50 font-sans antialiased flex items-center">
         <header className="h-16 w-full fixed top-0 z-40 backdrop-blur flex justify-center border-b">
           <Navbar />
         </header>

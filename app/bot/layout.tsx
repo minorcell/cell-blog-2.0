@@ -19,7 +19,7 @@ export default function BotLayout({
   };
 
   return (
-    <div className="animate-fadeIn mx-auto w-3/5 h-screen flex items-center justify-center rounded-b-xl -mt-24 shadow-2xl border bg-slate-100">
+    <div className="animate-fadeIn mx-auto w-3/5 h-screen flex items-center justify-center rounded-b-xl shadow-2xl border bg-slate-100">
       {globalIsLogin ? (
         children
       ) : (

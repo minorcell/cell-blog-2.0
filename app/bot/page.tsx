@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import { Send, Trash2, LoaderCircle } from "lucide-react";
-import useStore from "@/app/store/useStore";
 
 import MessageBox from "@/app/ui/bot/MessageBox";
 import SpeechRecognitionComponent from "../ui/bot/Speech";

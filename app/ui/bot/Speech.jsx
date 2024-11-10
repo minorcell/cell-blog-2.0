@@ -36,7 +36,7 @@ function SpeechRecognitionComponent({
       setIsAbleToSpeak(false);
     };
 
-    recognitionRef.current.onerror = (event) => {
+    recognitionRef.current.onerror = () => {
       setStart(false);
       setIsAbleToSpeak(false);
     };
