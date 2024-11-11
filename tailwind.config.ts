@@ -22,18 +22,18 @@ const config: Config = {
 				},
 				botSpeech: {
 					'0%': {
-						transform: 'scale(0.8) rotate(0deg)'
+						transform: 'scale(0.7) rotate(0deg)'
 					},
 					'50%': {
-						transform: 'scale(1.2) rotate(360deg)'
+						transform: 'scale(1.3) rotate(540deg)'
 					},
 					'100%': {
-						transform: 'scale(0.8) rotate(720deg)'
+						transform: 'scale(0.7) rotate(1080deg)'
 					}
-				}
+				},
 			},
 			colors: {
-				global: '#616cff'
+				global: '#616cff',
 			},
 			animation: {
 				fadeIn: 'fadeIn 0.5s ease-in-out',
@@ -43,10 +43,9 @@ const config: Config = {
 			backgroundImage: {
 				'gradient-text': 'linear-gradient(44.68786392067387deg, #616CFF 0%, #68A4FF 100%)'
 			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+			boxShadow: {
+				"blog-card": "6px 6px 30px #9d9e9e, -6px -6px 30px #ffffff;",
+				"blog-hover": "18px 18px 60px #a1a1a1, -18px -18px 60px #ffffff;"
 			}
 		}
 	},

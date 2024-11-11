@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 @layer utilities {
-    .gradient-text {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-[#616CFF] to-[#68A4FF];
-    }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#616CFF] to-[#68A4FF];
+  }
 }
 
 div::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 div {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

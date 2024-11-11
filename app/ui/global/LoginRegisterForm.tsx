@@ -2,6 +2,7 @@
 
 import useStore from "@/app/store/useStore";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { Eye, EyeOff } from "lucide-react";
 import { loginServer } from "@/app/lib/data/user";
 
@@ -44,11 +45,28 @@ const LoginRegisterForm: React.FC<LoginRegisterFormProps> = ({ setIsOpen }) => {
     try {
       const { name, password } = userInfo;
       const response = await loginServer({ name, password });
-      setUser(response.data);
-      setGlobalIsLogin(true);
-      setIsOpen(false);
+      if (response.data) {
+        setUser(response.data);
+        setGlobalIsLogin(true);
+        toast.success("🎉登录成功~", {
+          icon: false,
+          position: "top-center",
+          autoClose: 4000,
+          pauseOnHover: true,
+          theme: "colored",
+        });
+        setIsOpen(false);
+      } else {
+        toast.error("😢登录失败，请检查用户名和密码~", {
+          icon: false,
+          position: "top-center",
+          autoClose: 4000,
+          pauseOnHover: true,
+          theme: "colored",
+        });
+      }
     } catch (error) {
-      console.error("登录失败", error);
+      setGlobalIsLogin(false);
     }
   }
 

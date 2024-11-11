@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Fingerprint } from "lucide-react";
+import { motion } from "framer-motion";
 import useStore from "@/app/store/useStore";
 
 import Links from "@/app/ui/global/Links";
@@ -28,7 +29,8 @@ const Navbar = () => {
     <div className="w-4/5 h-full flex items-center justify-center">
       <Links />
       <SearchInput />
-      <div
+      <motion.div
+        whileHover={{ rotate: 360, scale: 1.2 }}
         onClick={onOpen}
         className="ml-12 border w-9 h-9 p-1 flex items-center justify-center rounded-xl cursor-pointer"
       >
@@ -37,7 +39,7 @@ const Navbar = () => {
             globalIsLogin ? "text-green-500" : "text-red-500"
           }`}
         />
-      </div>
+      </motion.div>
       <Modal isOpen={isOpen} onClose={onClose} showBottomButtons={false}>
         <LoginRegisterForm setIsOpen={setIsOpen} />
       </Modal>

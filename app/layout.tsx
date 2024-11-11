@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/ui/Navbar";
+
 import BotCell from "@/app/ui/bot/BotCell";
+import { ToastContainer } from "react-toastify";
+
 import "./globals.css";
+import "react-toastify/dist/ReactToastify.css";
 
 export const metadata: Metadata = {
   title: {
@@ -28,6 +32,7 @@ export default function RootLayout({
         </header>
         {children}
         <BotCell />
+        <ToastContainer autoClose={4000} stacked />
       </body>
     </html>
   );
