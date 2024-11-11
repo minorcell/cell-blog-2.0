@@ -19,13 +19,26 @@ const config: Config = {
 					'100%': {
 						opacity: '1'
 					}
+				},
+				botSpeech: {
+					'0%': {
+						transform: 'scale(0.8) rotate(0deg)'
+					},
+					'50%': {
+						transform: 'scale(1.2) rotate(360deg)'
+					},
+					'100%': {
+						transform: 'scale(0.8) rotate(720deg)'
+					}
 				}
 			},
 			colors: {
 				global: '#616cff'
 			},
 			animation: {
-				fadeIn: 'fadeIn 0.5s ease-in-out'
+				fadeIn: 'fadeIn 0.5s ease-in-out',
+				rotateSlowly: 'spin 5s linear infinite',
+				botSpeech: 'botSpeech 2.5s ease-in-out infinite',
 			},
 			backgroundImage: {
 				'gradient-text': 'linear-gradient(44.68786392067387deg, #616CFF 0%, #68A4FF 100%)'

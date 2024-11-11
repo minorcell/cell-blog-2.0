@@ -20,15 +20,21 @@ function SpeechRecognitionComponent({
       setIsRecognitionAvailable(false);
       return;
     }
+
     recognitionRef.current = new SpeechRecognition();
     recognitionRef.current.lang = "zh-CN";
-    recognitionRef.current.interimResults = false;
+    recognitionRef.current.interimResults = true;
     recognitionRef.current.maxAlternatives = 1;
 
     recognitionRef.current.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
+      const transcript = Array.from(event.results)
+        .map((result) => result[0].transcript)
+        .join("");
+
       setContext(transcript);
-      setFinishSpeech(true);
+      if (event.results[event.resultIndex].isFinal) {
+        setFinishSpeech(true);
+      }
     };
 
     recognitionRef.current.onend = () => {
@@ -40,7 +46,7 @@ function SpeechRecognitionComponent({
       setStart(false);
       setIsAbleToSpeak(false);
     };
-  }, [setContext, setStart]);
+  }, [setContext, setStart, setFinishSpeech]);
 
   useEffect(() => {
     if (start && recognitionRef.current) {
@@ -55,7 +61,6 @@ function SpeechRecognitionComponent({
     if (isAbleToSpeak) {
       recognitionRef.current.stop();
     }
-
     setStart(true);
   };
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/app/ui/Navbar";
+import BotCell from "@/app/ui/bot/BotCell";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
           <Navbar />
         </header>
         {children}
+        <BotCell />
       </body>
     </html>
   );
