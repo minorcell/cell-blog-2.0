@@ -11,7 +11,7 @@ const Chat: React.FC<ChatProps> = ({ messages }) => {
       {messages.map((msg: MessageType, index: number) => (
         <Bubble key={index} sender={msg.sender} message={msg.message} />
       ))}
-      <h3 className="text-gray-400 text-xs text-center select-none">
+      <h3 className="border-none text-gray-400 text-xs text-center select-none">
         🛡️ 为保证用户信息安全，对话内容仅保存在浏览器本地。
       </h3>
     </div>

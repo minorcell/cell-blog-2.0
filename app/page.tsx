@@ -4,7 +4,7 @@ import AboutWorkSpace from "@/app/ui/home/AboutWorkSpace";
 
 export default function HomePage() {
   return (
-    <div className="w-[100%] h-screen flex flex-col items-center justify-center animate-fadeIn">
+    <div className="w-screen h-screen flex flex-col items-center justify-center animate-fadeIn pt-24">
       <TypingContext />
       <div className="w-3/5 flex items-start justify-between">
         <AboutWorkSpace />

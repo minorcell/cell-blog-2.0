@@ -7,11 +7,11 @@ import { BlogDataProps } from "@/app/lib/type/type";
 export default function BlogData({ total }: BlogDataProps) {
   return (
     <>
-      <h1 className="text-3xl font-bold text-center mb-4">
+      <div className="text-3xl font-bold text-center mb-4">
         <span className="text-red-500">博</span>{" "}
         <span className="text-yellow-500">客</span>{" "}
         <span className="text-blue-500">录</span>
-      </h1>
+      </div>
       <div>
         <div>
           <p className="text-center text-gray-500">

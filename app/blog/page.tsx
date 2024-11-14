@@ -5,7 +5,6 @@ import { getBlogList } from "@/app/lib/data/blog";
 import { BlogType, BlogDataProps } from "@/app/lib/type/type";
 import BlogItem from "@/app/ui/blog/BlogItem";
 import BlogData from "@/app/ui/blog/BlogData";
-import { Reorder } from "framer-motion";
 
 export default function Blog() {
   const [blogList, setBlogList] = useState<BlogType[]>([]);
@@ -26,18 +25,11 @@ export default function Blog() {
       <div className="w-2/5 mb-12">
         <BlogData total={blogData.total} />
       </div>
-      <Reorder.Group
-        axis="y"
-        onReorder={setBlogList}
-        values={blogList}
-        className="w-3/5 flex-col items-center"
-      >
+      <div className="w-3/5 flex-col items-center">
         {blogList.map((item: BlogType, index: number) => (
-          <Reorder.Item key={index} value={item}>
-            <BlogItem blog={item} />
-          </Reorder.Item>
+          <BlogItem blog={item} key={index + "blogItem"} />
         ))}
-      </Reorder.Group>
+      </div>
     </div>
   );
 }

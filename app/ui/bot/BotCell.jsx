@@ -190,7 +190,7 @@ export default function BotCell() {
             width={80}
             height={80}
             alt="BotCell"
-            className={`${
+            className={`border-none shadow-none ${
               isSpeech || isSending
                 ? "animate-botSpeech"
                 : "animate-rotateSlowly"

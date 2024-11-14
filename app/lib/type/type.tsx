@@ -6,6 +6,7 @@ export type BlogType = {
   cover: string;
   intro: string;
   update_time: Date;
+  content: string;
 };
 
 export type BlogDataProps = {

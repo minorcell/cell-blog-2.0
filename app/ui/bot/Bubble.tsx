@@ -4,7 +4,7 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import { motion } from "framer-motion";
 import rehypeHighlight from "rehype-highlight";
-import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/github.css";
 
 interface BubbleProps {
   message: string;
@@ -41,10 +41,7 @@ const Bubble: React.FC<BubbleProps> = ({ message, sender, showAvatat }) => {
             }`}
             variants={bubbleVariants}
           >
-            <ReactMarkdown
-              rehypePlugins={[rehypeHighlight]}
-              className="prose prose-zinc"
-            >
+            <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
               {message}
             </ReactMarkdown>
           </motion.div>
