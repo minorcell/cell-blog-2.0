@@ -14,9 +14,6 @@ export default function Blog() {
   useEffect(() => {
     const fetchData = async () => {
       const res = await getBlogList();
-      for (let i = 0; i < 10; i++) {
-        res.data.push(res.data[0]);
-      }
       setBlogList(res.data);
       setBlogData({ total: res.data.length });
     };

@@ -65,7 +65,7 @@ const LoginRegisterForm: React.FC<LoginRegisterFormProps> = ({ setIsOpen }) => {
           theme: "colored",
         });
       }
-    } catch (error) {
+    } catch {
       setGlobalIsLogin(false);
     }
   }
